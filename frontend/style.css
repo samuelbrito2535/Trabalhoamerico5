@@ -1,0 +1,144 @@
+/* 1. RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 2. O FUNDO AZUL VIBRANTE */
+body {
+    background: linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 3. O CARTÃO PRINCIPAL */
+.todo-card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 500px;
+    
+    /* ISSO AQUI JOGA A LISTA PARA BAIXO 👇 */
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+    
+    border-bottom: 8px solid #00C6FF;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    max-height: 85vh; 
+}
+
+h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* 4. INPUT + BOTÃO */
+.input-group {
+    display: flex;
+    gap: 10px;
+    height: 55px;
+    width: 100%;
+    flex-shrink: 0; /* Impede que essa área encolha */
+}
+
+input {
+    flex: 1;
+    padding: 0 15px;
+    background: #fff;
+    border: 3px solid #3fa9f5;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #0052D4;
+}
+
+button {
+    padding: 0 25px;
+    background: #ffb703; /* Amarelo */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    box-shadow: 0 4px 0 #e09f00;
+    white-space: nowrap;
+}
+
+button:hover {
+    background: #ffaa00;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #e09f00;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* 5. A LISTA DE TAREFAS */
+ul {
+    list-style: none;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column; /* Garante lista vertical */
+    gap: 15px;
+    
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+    min-height: 100px;
+}
+
+/* Scrollbar Azul */
+ul::-webkit-scrollbar { width: 8px; }
+ul::-webkit-scrollbar-track { background: #f0f8ff; border-radius: 10px; }
+ul::-webkit-scrollbar-thumb { background: #89c4f4; border-radius: 10px; }
+
+/* 6. ITEM DA LISTA */
+li {
+    background: #e3f2fd;
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 8px solid #2196f3;
+    color: #0d47a1;
+    font-weight: 600;
+    word-break: break-word;
+    flex-shrink: 0;
+}
+
+li span { flex: 1; margin-right: 10px; }
+
+li button {
+    background: white;
+    color: #ff3333;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: auto;
+    box-shadow: none;
+}
+
+li button:hover {
+    background: #ff3333;
+    color: white;
+    transform: scale(1.1);
+}
